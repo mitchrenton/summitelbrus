@@ -34,24 +34,28 @@
    
          <div <? post_class('three columns'); ?>>
          
-         <? if(has_post_thumbnail()) : ?>
+            <a href="<? the_permalink(); ?>" title="<? the_title_attribute(); ?>">
+        
+            <? if(has_post_thumbnail()) : ?>
+            
+               <?
+               $img_id = get_post_thumbnail_id($post->ID); 
+               $image = wp_get_attachment_image_src($img_id, 'primary');
+               $img_url = $image['0'];
+               $alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
+               ?>
+               
+               <figure>
+                  <img src="<? echo $img_url; ?>" title="<? the_title_attribute(); ?> thumbnail image" alt="<? $alt_text; ?>" />
+               </figure>
+               
+            <? endif; ?>
+            
+            <p class="more"><? the_field('nickname'); ?></p>
          
-            <?
-            $img_id = get_post_thumbnail_id($post->ID); 
-            $image = wp_get_attachment_image_src($img_id, 'primary');
-            $img_url = $image['0'];
-            $alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
-            ?>
+            <? //the_excerpt(); ?>
             
-            <figure>
-               <img src="<? echo $img_url; ?>" title="<? the_title_attribute(); ?> thumbnail image" alt="<? $alt_text; ?>" />
-            </figure>
-            
-         <? endif; ?>
-            
-            <p><a href="<? the_permalink(); ?>" title="<? the_title_attribute(); ?>"><? the_field('nickname'); ?></a></p>
-         
-            <? the_excerpt(); ?>
+            </a>
                            
          </div><!-- five-column -->
          
@@ -96,6 +100,8 @@
          <? endif; ?>
          
          <h3><a href="<? the_permalink(); ?>" title="<? the_title_attribute(); ?>"><? the_title(); ?></a></h3>
+         
+         <time datetime="<?php the_time( 'Y-m-d' ); ?>"><? the_date(); ?> <? the_time(); ?></time>
          
          <? the_excerpt(); ?>
          
@@ -147,7 +153,7 @@
                   
                   <? if($fromDate && $toDate) : ?>
                   
-                  <date><? echo $fromDate->format('dS F') .' - '. $toDate->format('dS F'); ?></date>
+                  <p class="date"><? echo $fromDate->format('dS F') .' - '. $toDate->format('dS F'); ?></p>
                   
                   <? endif; ?>
                                  
@@ -169,7 +175,7 @@
                <li class="icon-youtube"><a href="#">YouTube</a></li>
                <li class="icon-facebook"><a href="#">Facebook</a></li>
                <li class="icon-twitter"><a href="#">Twitter</a></li>
-            <ul>
+            </ul>
          
          </section><!-- connect -->
       

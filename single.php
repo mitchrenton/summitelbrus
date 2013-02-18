@@ -1,7 +1,5 @@
 <? get_header(); ?>
 
-</header>
-
    <div class="row">
 
       <div class="content seven columns">

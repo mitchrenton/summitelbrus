@@ -49,7 +49,7 @@
       
          <li>
             <a href="<? the_permalink(); ?>" title="<? the_title_attribute(); ?>"><? the_title(); ?>
-               <date><? the_date(); ?></date>
+               <time datetime="<?php the_time( 'Y-m-d' ); ?>"><? the_date(); ?></time>
                <span class="more">More</span>
             </a>
          </li>
@@ -86,7 +86,7 @@
             ?>
             
             <figure>
-               <img src="<? echo $img_url; ?>" title="<? the_title_attribute(); ?> thumbnail image" alt="<? $alt_text; ?>" />
+               <a href="<? the_permalink(); ?>"><img src="<? echo $img_url; ?>" title="<? the_title_attribute(); ?> thumbnail image" alt="<? $alt_text; ?>" /></a>
             </figure>
             
          <? endif; ?>
@@ -139,7 +139,7 @@
             
             <? if($fromDate && $toDate) : ?>
             
-            <date><? echo $fromDate->format('dS F') .' - '. $toDate->format('dS F'); ?></date>
+            <p class="date"><? echo $fromDate->format('dS F') .' - '. $toDate->format('dS F'); ?></p>
             
             <? endif; ?>
                            
@@ -161,7 +161,7 @@
          <li class="icon-youtube"><a href="#">YouTube</a></li>
          <li class="icon-facebook"><a href="#">Facebook</a></li>
          <li class="icon-twitter"><a href="#">Twitter</a></li>
-      <ul>
+      </ul>
    
    </section><!-- connect -->
    
@@ -201,4 +201,4 @@
    
    </section><!-- photo-stream -->
    
-</section>
+</div>

@@ -16,7 +16,7 @@
          
             <h2><a href="<? the_permalink(); ?>" title="<? the_title_attribute(); ?>"><? the_title(); ?></a></h2>
             
-            <p class="meta">Written by <a href="<? the_author_link(); ?>" title="Read all posts written by <? the_author(); ?>"><? the_author(); ?></a> ~ <? the_date(); ?> ~ posted in <? the_category('$bull;'); ?></p>
+            <p class="meta">Written by <? the_author_posts_link(); ?> ~ <time datetime="<?php the_time( 'Y-m-d' ); ?>"><? the_date(); ?> <? the_time(); ?></time> ~ posted in <? the_category('$bull;'); ?></p>
             
             <? if(has_post_thumbnail()) : ?>
             
@@ -40,6 +40,11 @@
          </article>
          
          <? endwhile; endif; ?>
+         
+         <div class="pagination group">
+            <p class="newer-posts"><? previous_posts_link('Newer Posts &rarr;') ?></p>
+            <p class="older-posts"><? next_posts_link('&larr; Older Posts','') ?></p>
+         </div>
    
       </div><!-- content -->
    

@@ -93,8 +93,7 @@ section h2, .sub-title {
    border-bottom: 1px solid #e1e1e1;
 }
 
-date {
-   display: block;
+time, .date {
    font: italic 12px Georgia, serif;
    color: #8c8c8c;
 }
@@ -174,7 +173,7 @@ body.home .content {
 
 .members {
    position: relative;
-
+   top: -100px;
    text-align: center;
 }
 
@@ -250,7 +249,6 @@ body.home .content {
 
 .training-item h3, .training-item p {
    margin: 0;
-   line-height: 1.1;
 }
 
 .training-item h3 {
@@ -288,6 +286,10 @@ body.home .content {
 .recent-posts li span {
    display: block;
    font-size: 11px;
+}
+
+.recent-posts li time {
+   display: block;
 }
 
 .connect ul li a {
@@ -351,3 +353,32 @@ body.home .content {
    color: #2795B6;
 } 
 
+/* Index */
+
+.pagination {
+   margin-top: 35px;
+   padding-top: 10px;
+   border-top: 1px dashed #ccc;
+}
+
+.pagination .newer-posts {
+   float: right;
+}
+
+.pagination .older-posts {
+   float: left;
+}
+
+/* Footer */
+
+footer {
+   max-width: 1000px;
+   margin: 0 auto;
+   padding: 20px;
+   background: url(images/home-bg.png);
+}
+
+footer p, footer a {
+   margin: 0;
+   color: #ccc;
+}
