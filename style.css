@@ -27,6 +27,55 @@ body {
    background: white;
 }
 
+/* Common elements */
+
+.more:after {
+   content: " \2192"
+}
+
+section h2, .sub-title {
+   margin-top: 0;
+   padding-bottom: 2px;
+   font-size: 12px;
+   font-weight: normal;
+   line-height: 1.4;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   color: #6e6e6e;
+   border-bottom: 1px solid #e1e1e1;
+}
+
+time, .date {
+   font: italic 12px Georgia, serif;
+   color: #8c8c8c;
+}
+
+.meta {
+   border-top: 1px dashed #e1e1e1;
+   border-bottom: 1px dashed #e1e1e1;
+   padding: 4px 0px;
+   font: italic 12px Georgia, serif;
+   color: #8c8c8c;
+}
+
+.meta span {
+   font: normal 11px 'Proxima-nova', sans-serif;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+.breadcrumb {
+   padding: 0 15px;
+   text-align: right;
+}
+
+.breadcrumb p {
+   font-size: 11px;
+   color: #a6a6a6;
+}
+
+/* Header */
+
 header {
    position: fixed;
    top: 0;
@@ -77,49 +126,8 @@ header nav li a:after  {
    background: url(images/icon-sprite.png) no-repeat -48px -32px;
 }
 
-.more:after {
-   content: " \2192"
-}
-
-section h2, .sub-title {
-   margin-top: 0;
-   padding-bottom: 2px;
-   font-size: 12px;
-   font-weight: normal;
-   line-height: 1.4;
-   text-transform: uppercase;
-   letter-spacing: 3px;
-   color: #6e6e6e;
-   border-bottom: 1px solid #e1e1e1;
-}
-
-time, .date {
-   font: italic 12px Georgia, serif;
-   color: #8c8c8c;
-}
-
-.meta {
-   border-top: 1px dashed #e1e1e1;
-   border-bottom: 1px dashed #e1e1e1;
-   padding: 4px 0px;
-   font: italic 12px Georgia, serif;
-   color: #8c8c8c;
-}
-
-.meta span {
-   font: normal 11px 'Proxima-nova', sans-serif;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-}
-
-.breadcrumb {
-   padding: 0 15px;
-   text-align: right;
-}
-
-.breadcrumb p {
-   font-size: 11px;
-   color: #a6a6a6;
+.mobile-nav-trigger {
+   display: none;
 }
 
 /* ========== HOMEPAGE ==========*/
@@ -235,7 +243,7 @@ body.home .content {
    color: #e1e1e1;
 }
 
-/* Sidebar */
+/* ========== SIDEBAR ==========*/
 
 .sidebar section {
    margin-bottom: 20px;
@@ -329,10 +337,10 @@ body.home .content {
    background-position: 0 -32px;
 }
 
-/* Single */
+/* ========== SINGLE ==========*/
 
 
-/* Members */
+/* ========== MEMBERS ==========*/
 
 .post-type-archive-member .type-member {
    text-align: center;
@@ -353,7 +361,7 @@ body.home .content {
    color: #2795B6;
 } 
 
-/* Index */
+/* ========== INDEX ==========*/
 
 .pagination {
    margin-top: 35px;
@@ -369,7 +377,7 @@ body.home .content {
    float: left;
 }
 
-/* Footer */
+/* ========== FOOTER ==========*/
 
 footer {
    max-width: 1000px;
@@ -381,4 +389,35 @@ footer {
 footer p, footer a {
    margin: 0;
    color: #ccc;
+}
+
+/* ========== MEDIA QUERIES ==========*/
+
+/* Mobile navigation */
+
+@media only screen and (max-width: 767px) { 
+   
+   header nav ul {
+      width: 100%;
+      display: none;
+   }
+   
+   header nav ul li {
+      width: 100%;
+      border-bottom: 1px dashed #6E6E6E;
+   }
+   
+   header nav ul li:last-child {
+      border: none;
+   }
+   
+   .mobile-nav-trigger {
+      float: right;
+      display: block;
+      margin: 5px;
+      width: 32px;
+      height: 27px;
+      background: url(images/mobile-nav-icon.png) no-repeat;
+   }
+
 }

@@ -3,10 +3,11 @@
 </header>
 
    <div class="row">
-
+      <!--
       <div class="breadcrumb">
           <p>You are here: <a href="<? bloginfo('url'); ?>">Home</a> &raquo; <a href="<? bloginfo('url'); ?>/training">Training</a> &raquo <? the_title(); ?></p>
        </div>
+       -->
 
       <div class="content seven columns">
       

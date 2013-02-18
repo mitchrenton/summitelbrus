@@ -7,8 +7,10 @@ add_theme_support( 'menus' );
 add_theme_support( 'automatic-feed-links' );
 
 // Add options page
-register_options_page('Background Images');
-register_options_page('Footer');
+if(function_exists('register_options_page')) {
+   register_options_page('Background Images');
+   register_options_page('Footer');
+}
 
 // Activate Featured Images
 add_theme_support( 'post-thumbnails' );

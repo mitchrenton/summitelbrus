@@ -19,6 +19,13 @@
 
     //$.fn.placeholder                ? $('input, textarea').placeholder() : null;
     $('.format-video').fitVids();
+    
+    // Mobile navigation
+    $('.mobile-nav-trigger').click(function(e) {
+       e.preventDefault();
+       $('nav ul').toggle();
+    });
+    
   });
 
   // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids

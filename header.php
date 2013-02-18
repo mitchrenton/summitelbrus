@@ -37,11 +37,17 @@
 
    <header>
    
+      <nav>
+      
+         <a href="#" class="mobile-nav-trigger"></a>
+   
       <? wp_nav_menu(array(
          'menu' => 'Main menu',
-         'container' => 'nav',
+         'container' => '',
          'container_class' => 'main-menu'
       )); ?>
+      
+      </nav>
          
    </header>
    
